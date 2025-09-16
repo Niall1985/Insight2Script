@@ -49,7 +49,7 @@ graph = builder.compile()
 async def main():
     # Provide initial state with query
     initial_state = {
-        "query": "Nikola Tesla",
+        "query": "",
         "ddg_results": [],
         "wiki_results": [],
         "youtube_results": []

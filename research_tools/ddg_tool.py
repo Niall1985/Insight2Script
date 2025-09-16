@@ -1,7 +1,7 @@
 from ddgs import DDGS
 from research_agent.ddgs_scraper import scrape_site_text
 
-def extract_ddg_results(prompt):
+def extract_ddg_results(prompt:str)->str:
     content = ""
     url_results = []
     results = DDGS().text(prompt, max_results=5)

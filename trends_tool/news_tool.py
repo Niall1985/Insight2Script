@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-def get_news_articles_count(query, api_key):
+def get_news_articles_count(query):
     params = {
         "engine": "google_news",
         "q": query,
@@ -12,3 +12,7 @@ def get_news_articles_count(query, api_key):
     search = GoogleSearch(params)
     data = search.get_dict()
     return len(data.get('news_results', []))
+
+# if __name__ == "__main__":
+#     res = get_news_articles_count("Nikola Tesla")
+#     print(res)

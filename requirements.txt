@@ -13,4 +13,5 @@ langchain-core==0.3.75
 langgraph==0.4.8
 langchain-groq==0.3.1
 youtube-transcript-api==1.2.2
+beautifulsoup4==4.12.3
 

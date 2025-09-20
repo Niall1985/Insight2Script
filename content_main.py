@@ -107,7 +107,7 @@ async def combined(input_query):
     print("\n=== YouTube Summary ===")
     print(youtube_summary)
 
-    script = content_llm(ddg_summary, wiki_summary, youtube_summary)
+    script = content_llm(ddg_summary, wiki_summary, youtube_summary, input_query)
         
     print("\n=== Video Script ===")
     print(script)

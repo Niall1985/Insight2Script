@@ -10,7 +10,7 @@ genai.configure(api_key=key)
 model = genai.GenerativeModel(model_name="gemini-2.5-flash")
 
 
-def content_llm(ddg_summary, wiki_summary, youtube_summary):
+def content_llm(ddg_summary, wiki_summary, youtube_summary, input_query):
     prompt = f"""You are an advanced script-generation agent that creates engaging YouTube video scripts based on provided input data and your external general knowledge.
 You will receive data from multiple sources about a subject (e.g., DuckDuckGo search results, Wikipedia content, YouTube transcripts) and your task is to combine these inputs with additional information you have been trained on to generate a compelling, structured script.
 The final script should be organized and flow smoothly for a YouTube audience, covering the following sections in a logical and engaging order:
@@ -32,6 +32,8 @@ Example Input:
 ddg_results: {ddg_summary}
 wiki_results: {wiki_summary}
 youtube_results: {youtube_summary}
+input_query: {input_query}
+If the summaries from yt, wiki n ddg do not exactly match the input query, use some of the content from the summaries and try to use ur prior training to generate content more relavant to the user input
 Generate a high-quality video script that flows naturally, integrating this information along with your general knowledge to create a captivating narrative.
 """
     response = model.generate_content(prompt)
